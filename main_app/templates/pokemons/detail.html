@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Pokemon Details</h1>
+
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ pokemon.name }}</span>
+      <p>Type: {{ pokemon.type }}</p>
+      <p>Description: {{ pokemon.description|linebreaks }}</p>
+        <p>Special: {{ pokemon.special }}</p>
+        <p>HP: {{ pokemon.hp }}</p>
+    </div>
+    <div class="card-action"></div>
+      <a href="{% url 'pokemons_update' pokemon.id %}">Edit</a>
+      <a href="{% url 'pokemons_delete' pokemon.id %}">Delete</a>
+    </div>
+    
+    {% endblock %}

@@ -5,6 +5,7 @@
 
 {% for pokemon in pokemons %}
   <div class="card">
+    <a href="{% url 'detail' pokemon.id %}">
     <div class="card-content">
       <span class="card-title">{{ pokemon.name }}</span>
       <p>Type: {{ pokemon.type }}</p>
