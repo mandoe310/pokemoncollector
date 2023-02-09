@@ -18,5 +18,6 @@ urlpatterns = [
   path('trainers/create/', views.TrainerCreate.as_view(), name='trainers_create'),
   path('trainers/<int:pk>/update/', views.TrainerUpdate.as_view(), name='trainers_update'),
   path('trainers/<int:pk>/delete/', views.TrainerDelete.as_view(), name='trainers_delete'),
+  path('accounts/signup/', views.signup, name='signup'),
 ]
 

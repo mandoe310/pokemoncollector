@@ -19,10 +19,17 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'trainers_create' %}">Add a Trainer</a></li>
-          <li><a href="{% url 'trainers_index' %}">View All Trainers</a></li>
-          <li><a href="{% url 'pokemons_create' %}">Add a Pokemon</a></li>
-          <li><a href="{% url 'index' %}">View All My Pokemon</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'trainers_create' %}">Add a Trainer</a></li>
+            <li><a href="{% url 'trainers_index' %}">View All Trainers</a></li>
+            <li><a href="{% url 'pokemons_create' %}">Add a Pokemon</a></li>
+            <li><a href="{% url 'index' %}">View All My Pokemon</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
+        </ul>
         </ul>
       </div>
     </nav>
